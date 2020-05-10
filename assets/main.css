@@ -39,6 +39,7 @@ body {
     color: #212529;
     text-align: left;
     background-color: #fff; 
+    
 }
 content{
   padding: 2em;
@@ -56,6 +57,10 @@ margin-bottom: 1rem; }
     background-color: turquoise;
     margin: 0;
     overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    transition: top 0.3s;
   }
   nav ul {
     margin: 0;
@@ -84,7 +89,7 @@ margin-bottom: 1rem; }
     background-color: turquoise;
     color: white;
     font-family: "Open-Sans", sans-serif;
-    font-size: 15px;
+    font-size: 2rem;
     font-weight: 100;
     text-decoration: none;
     
@@ -125,6 +130,7 @@ margin-bottom: 1rem; }
 
   
   h1.about{
+    padding-top: 10rem;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 30px;
@@ -141,12 +147,13 @@ margin-bottom: 1rem; }
     color: white;
     font-weight: lighter;
     font-family: "Open Sans", sans-serif;
-    font-size: medium;
+    font-size: 2.5rem;
+    padding-top: 30px;
   }
   /*Icon & button styling*/
   .iconList{
-    padding-top: 2em;
-    padding-bottom: 5em;
+    padding-top: 50px;
+    padding-bottom: 100px;
     justify-content: center;
     display:flex;
   }
@@ -158,8 +165,8 @@ margin-bottom: 1rem; }
     margin-bottom: auto auto;
     overflow: hidden;
     height: auto;
-    padding-left: 200px; 
-    padding-right: 200px;
+    padding-left: 400px; 
+    padding-right: 400px;
   }
   .project-container{
     justify-content: center;
@@ -203,14 +210,14 @@ margin-bottom: 1rem; }
 
   h5.card-title{
     color: var(--gunmetal);
-    font-size: x-large;
+    font-size: 3rem;
   }
   .card-desc{
-    font-size: 1.5em;
+    font-size: 1.5rem;
     padding-top: 1em;;
   }
   .card-text{
-    font-size: 1em;
+    font-size: 1.5rem;
     padding-top: 0px;
   }
   #helpingeye{
