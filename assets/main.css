@@ -42,7 +42,6 @@ body {
     
 }
 content{
-  padding: 2em;
 }
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
@@ -147,7 +146,7 @@ margin-bottom: 1rem; }
     color: white;
     font-weight: lighter;
     font-family: "Open Sans", sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding-top: 30px;
   }
   /*Icon & button styling*/
@@ -237,8 +236,9 @@ margin-bottom: 1rem; }
     margin-bottom: auto auto;
     overflow: hidden;
     height: auto;
-    padding-left: 200px; 
-    padding-right: 200px;
+    padding-left: 300px; 
+    padding-right: 300px;
+    justify-content: center;
   }
 
   h1.more{
@@ -249,7 +249,43 @@ margin-bottom: 1rem; }
     color: var(--darkpurple) ;
     flex: 1;
   }
-
+  .more container{
+    align-items: center;
+    
+  }
+  .more h2{
+    font-size: 3rem;
+    color: var(--darkpurple);
+    padding-bottom: 8rem;
+  }
+  article h3{
+    font-size: 4rem;
+    color: var(--darkpurple);
+    font-weight: 400;
+  }
+  article p{
+    font-size: 2rem;
+  }
+  article{
+    box-sizing: border-box;
+    margin-bottom: 60px;
+  }
+  article a{
+    color: #5F0A87;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  article a :hover{
+    color: white;
+    text-decoration: none;
+  }
+  .more .card{
+    justify-content: center;
+    fill: #000;
+  }
+  .more .card-title{
+    font-size: 3rem;
+  }
   /*CSS bounce animation*/
   @-webkit-keyframes bounce {
     0%,  
