@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+:root {
+  --gunmetal: #292F36;
+  --turquoise: #4ecdc4;
+  --magenta: #B7B5FF;
+  --darkpurple: #25245E;
+  --white: #fff;
+  --black: #000;
+
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block; }
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff; 
+}
+content{
+  padding: 2em;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-weight: lighter;
+    margin-bottom: 0.5rem; }
+  
+p {
+margin-top: 0;
+margin-bottom: 1rem; }
+  /* extra nav? */
+  nav {
+    background-color: turquoise;
+    margin: 0;
+    overflow: hidden;
+  }
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+  }
+  nav ul li {
+    display: inline-block;
+    list-style-type: none;
+  }
+  nav ul li a {
+    color: white;
+    background-color: turquoise;
+    display: inline-block;
+    line-height: 1em;
+    padding: 1em 3em;
+    text-decoration: none;
+    
+  }
+  nav ul li:first-child {
+    margin-right: auto;
+
+  }
+  nav ul li a.menu{
+    background-color: turquoise;
+    color: white;
+    font-family: "Open-Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    text-decoration: none;
+    
+  }
+  nav ul li a.logo {
+    background-color: turquoise;
+    color: var(--gunmetal);
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 10px;
+    margin: 0;
+
+  }
+  nav ul li a:hover {
+    color: var(--gunmetal);
+    text-decoration: none;
+  }
+
+  /* About me class */
+
+  .about{
+    background-color: var(--darkpurple);
+    margin-bottom: auto auto;
+    overflow: hidden;
+    height: auto;
+    
+  }
+
+  .about a{
+    color:turquoise;
+    text-decoration: none;
+  }
+  .about a:hover{
+    color: var(--magenta);
+    text-decoration: none;
+  }
+
+  
+  h1.about{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 75px;
+    color: white;
+    flex: 1;
+  }
+  mark.magenta {
+    color: var(--magenta);
+    background: none;
+}
+  p.about{
+    text-align: center;
+    color: white;
+    font-weight: lighter;
+    font-family: "Open Sans", sans-serif;
+    font-size: medium;
+  }
+  /*Icon & button styling*/
+  .iconList{
+    padding-top: 2em;
+    padding-bottom: 5em;
+    justify-content: center;
+    display:flex;
+  }
+  
+  /*Project styling*/
+
+  .projects{
+    background-color: white;
+    margin-bottom: auto auto;
+    overflow: hidden;
+    height: auto;
+    padding-left: 200px; 
+    padding-right: 200px;
+  }
+  .project-container{
+    justify-content: center;
+    padding-top: 1.5em;
+    padding-bottom: 7em;
+  }
+  h1.projects{
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 0px;
+    font-size: 50px;
+    color: var(--gunmetal) ;
+    flex: 1;
+  }
+
+  .row{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  
+  /*project card styling*/
+
+  .card{
+    justify-content: center;
+    display: inline-flexbox;
+    }
+  .card-img{
+    display: inline;
+  }
+  
+  .card-img-top:hover {
+    animation: bounce 1.5s infinite; 
+    -webkit-animation: bounce 1.5s infinite;
+    -moz-animation: bounce 1.5s infinite; 
+    -o-animation: bounce 1.5s infinite;
+ }
+  .card-body{
+    padding-top: 2em;
+  }
+
+  h5.card-title{
+    color: var(--gunmetal);
+    font-size: x-large;
+  }
+  .card-desc{
+    font-size: 1.5em;
+    padding-top: 1em;;
+  }
+  .card-text{
+    font-size: 1em;
+    padding-top: 0px;
+  }
+  #helpingeye{
+    background-image: url(/SimpleSite/img/HelpingEye.png);
+
+  }
+  #autoflow{
+    background-image: url(/SimpleSite/img/AutoFlow.png);
+  }
+  #fullhouse{
+    background-image: url(/SimpleSite/img/FullHouse.png);
+  }
+
+/*more section*/
+  .more{
+    background-color:#FFD1DC;
+    margin-bottom: auto auto;
+    overflow: hidden;
+    height: auto;
+    padding-left: 200px; 
+    padding-right: 200px;
+  }
+
+  h1.more{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 50px;
+    color: var(--darkpurple) ;
+    flex: 1;
+  }
+
+  /*CSS bounce animation*/
+  @-webkit-keyframes bounce {
+    0%,  
+    100% {
+       -webkit-transform: translateY(0);
+    } 
+    50% {
+        -webkit-transform: translateY(-10px);
+    }
+}
+@-moz-keyframes bounce {
+    0%, 
+    100% {
+       -moz-transform: translateY(0);
+    }
+    50% {
+       -moz-transform: translateY(-10px);
+    }
+}
+@-o-keyframes bounce {
+    0%,
+    100% {
+       -o-transform: translateY(0);
+    }
+    50% {
+       -o-transform: translateY(-10px);
+    }
+}
+@keyframes bounce {
+    0%,  
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
