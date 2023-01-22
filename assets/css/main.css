@@ -192,6 +192,12 @@ input, select, textarea {
 			font-size: 1.25rem;
 		}
 
+		p.minor{
+			color:#ffffff;
+			font-size: 1rem;
+			font-style:normal;
+		}
+
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
 		line-height: 1.375;
@@ -4274,16 +4280,22 @@ input, select, textarea {
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
+		border-radius: 2rem;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
+		margin: 0 auto;
+		width: 40rem;
+		height:10rem;
+		align-items: center;
 		-moz-justify-content: center;
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
 		/* background: transparent; */
-		background:rgb(0, 0, 0);
+		background:rgb(34, 0, 88);
+		/* background:rgb(0, 0, 0); */
 		/* background: rgb(255,255,255);
 		background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(15,0,107,1) 100%);	 */
 		position: relative;
@@ -4294,10 +4306,11 @@ input, select, textarea {
 
 		.banner.style5 .content {
 			position: relative;
-			width: 40rem;
+			width: 100rem;
 			max-width: 100%;
 			margin-bottom: 2rem;
 			z-index: 1;
+			
 		}
 
 		.banner.style5 .image {
@@ -4318,6 +4331,8 @@ input, select, textarea {
 			opacity: 0.2;
 			transition: transform opacity 0.25s ease; 
 			/* opacity: 0.5; */
+			background:rgb(34, 0, 88);
+
 		}
 
 		.banner.style5 img {
