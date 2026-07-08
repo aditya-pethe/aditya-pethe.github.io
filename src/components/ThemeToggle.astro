@@ -1,0 +1,38 @@
+---
+import Icon from './Icon.astro';
+---
+<button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle color theme" title="Toggle theme">
+  <span class="theme-icon theme-icon--light"><Icon name="moon" size={18} /></span>
+  <span class="theme-icon theme-icon--dark"><Icon name="sun" size={18} /></span>
+</button>
+
+<style>
+  .icon-btn {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background var(--duration-fast) var(--ease-standard);
+  }
+  .icon-btn:hover { background: var(--surface-1); }
+
+  /* Show the moon in light mode (click -> go dark), sun in dark mode. */
+  .theme-icon--dark { display: none; }
+  :global([data-theme='dark']) .theme-icon--light { display: none; }
+  :global([data-theme='dark']) .theme-icon--dark { display: inline-flex; }
+</style>
+
+<script is:inline>
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const root = document.documentElement;
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+</script>

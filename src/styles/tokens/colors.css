@@ -1,0 +1,92 @@
+/* ============================================================
+   COLOR TOKENS — Aditya Pethe design system
+   Source of truth: uploads/studio-theme.css (ink/paper/blue/pink/lavender)
+   Light + dark via [data-theme] and prefers-color-scheme.
+   ============================================================ */
+
+:root {
+  /* ---- base palette (mode-independent) ---- */
+  --paper: #FAFAF7;
+  --ink:   #0B0F12;
+
+  --neutral-50:  #FAFAF7;
+  --neutral-100: #DDE2E6;
+  --neutral-150: #C4CACF;
+  --neutral-200: #ABB2B9;
+  --neutral-300: #949BA2;
+  --neutral-400: #7D858D;
+  --neutral-500: #676F76;
+  --neutral-600: #535A60;
+  --neutral-700: #40454B;
+  --neutral-800: #2D3236;
+  --neutral-900: #1C2023;
+  --neutral-950: #0B0F12;
+
+  --blue-50: #EDF8FF;  --blue-100: #D1ECFF; --blue-200: #A4DBFF;
+  --blue-300: #7CC4F2; --blue-400: #93C0FF; --blue-500: #3694C9;
+  --blue-600: #167CB0; --blue-700: #006491; --blue-800: #004D70; --blue-900: #003853;
+
+  --pink-50: #FFF2F5;  --pink-100: #FFDEE6; --pink-200: #F2BAC9;
+  --pink-300: #DBACB8; --pink-400: #C592A0; --pink-500: #AF7988;
+  --pink-600: #966371; --pink-700: #7B4E5B; --pink-800: #603A45; --pink-900: #472932;
+
+  --lavender-50: #FFF0FF;  --lavender-100: #F4E1F4; --lavender-200: #E2CAE1;
+  --lavender-300: #CCB0CC; --lavender-400: #B597B5; --lavender-500: #9E7E9E;
+  --lavender-600: #7B5E7B; --lavender-700: #6D526E; --lavender-800: #553E55; --lavender-900: #3E2C3E;
+
+  /* ---- semantic: LIGHT (default) ---- */
+  --surface-0: #FFFFFF;
+  --surface-1: #FFFFFF;
+  --surface-2: #FFFFFF;
+
+  --text-primary:   #0B0F12;
+  --text-secondary: #535A60;
+  --text-muted:     #676F76;
+
+  --border:        #DDE2E6;
+  --border-strong: #ABB2B9;
+
+  --accent-fill: #93C0FF; --accent-on: #0B0F12; --accent-text: #006491;
+  --accent-bg: #EDF8FF;    --accent-on-bg: #004D70; --accent-border: #7CC4F2;
+
+  --pink-fill: #F2BAC9; --pink-on: #0B0F12; --pink-text: #966371;
+  --pink-bg: #FFF2F5;    --pink-on-bg: #603A45; --pink-border: #DBACB8;
+
+  --lavender-fill: #7B5E7B; --lavender-on: #FAFAF7; --lavender-text: #7B5E7B;
+  --lavender-bg: #FFF0FF;    --lavender-on-bg: #553E55; --lavender-border: #CCB0CC;
+
+  --success-fill: #40A17C; --success-on: #0B0F12; --success-text: #007654; --success-bg: #D4FDE9;
+  --warning-fill: #BA7F00; --warning-on: #0B0F12; --warning-text: #976700; --warning-bg: #FFEFDA;
+  --danger-fill:  #E25852; --danger-on: #0B0F12;  --danger-text: #C33938;  --danger-bg: #FFEDEB;
+
+  --focus-ring: #93C0FF;
+}
+
+/* ---- semantic: DARK ---- */
+.dark, [data-theme="dark"] {
+  --surface-0: #0B0F12;
+  --surface-1: #1C2023;
+  --surface-2: #2D3236;
+
+  --text-primary:   #FAFAF7;
+  --text-secondary: #949BA2;
+  --text-muted:     #7D858D;
+
+  --border:        #2D3236;
+  --border-strong: #40454B;
+
+  --accent-fill: #93C0FF; --accent-on: #0B0F12; --accent-text: #93C0FF;
+  --accent-bg: #003853;   --accent-on-bg: #D1ECFF; --accent-border: #006491;
+
+  --pink-fill: #F2BAC9; --pink-on: #0B0F12; --pink-text: #F2BAC9;
+  --pink-bg: #472932;   --pink-on-bg: #FFDEE6; --pink-border: #7B4E5B;
+
+  --lavender-fill: #7B5E7B; --lavender-on: #FAFAF7; --lavender-text: #B597B5;
+  --lavender-bg: #3E2C3E;   --lavender-on-bg: #F4E1F4; --lavender-border: #6D526E;
+
+  --success-fill: #40A17C; --success-on: #0B0F12; --success-text: #54B48E; --success-bg: #043726;
+  --warning-fill: #BA7F00; --warning-on: #0B0F12; --warning-text: #CF911C; --warning-bg: #3F2903;
+  --danger-fill:  #E25852; --danger-on: #0B0F12;  --danger-text: #F86B64;  --danger-bg: #47211E;
+
+  --focus-ring: #93C0FF;
+}

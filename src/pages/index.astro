@@ -1,0 +1,161 @@
+---
+import Base from '../layouts/Base.astro';
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+import BrandIcon from '../components/BrandIcon.astro';
+import { site } from '../data/site';
+import { experience } from '../data/experience';
+
+const visibleExperience = experience.slice(
+  0,
+  experience.findIndex((role) => role.org === 'Alexa Prize Challenge') + 1
+);
+---
+<Base>
+  <section class="hero container">
+    <p class="kicker reveal" style="--reveal-delay: 0.05s">{site.role}</p>
+    <h1 class="hero__title reveal" style="--reveal-delay: 0.15s">{site.heroHeadline}</h1>
+    <p class="lede hero__lede reveal" style="--reveal-delay: 0.75s">{site.heroLede}</p>
+  </section>
+
+  <section id="about" class="section container reveal" style="--reveal-delay: 1.15s">
+    <h2 class="section-title">About</h2>
+    <div class="about__content">
+      <div class="prose">
+        {site.about.map((p) => <p>{p}</p>)}
+      </div>
+      <div class="about__avatar" aria-hidden="true">
+        <img src={site.avatar} alt="" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section container reveal" style="--reveal-delay: 1.25s">
+    <h2 class="section-title">Experience</h2>
+    <ul class="timeline">
+      {visibleExperience.map((role) => (
+        <li class="role">
+          <div class="role__logo">
+            {role.brand
+              ? <BrandIcon name={role.brand} size={24} />
+              : role.logo
+              ? <img src={role.logo} alt={`${role.org} logo`} loading="lazy" />
+              : <span class="role__logo-fallback">{role.org.charAt(0)}</span>}
+          </div>
+          <div class="role__body">
+            <div class="role__head">
+              <span class="role__title">{role.title}</span>
+            </div>
+            <div class="role__org">{role.org}</div>
+            <p class="role__blurb">{role.blurb}</p>
+            <div class="role__dates">{role.dates}</div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section id="contact" class="section container reveal" style="--reveal-delay: 1.35s">
+    <h2 class="section-title">Contact</h2>
+    <p class="prose contact__lede">Open to data science and ML roles. The fastest way to reach me is email.</p>
+    <div class="contact__links">
+      <Button href={`mailto:${site.email}`} variant="primary">
+        <Icon name="mail" size={18} /> {site.email}
+      </Button>
+      <Button href={site.socials.linkedin} variant="ghost" target="_blank" rel="noopener">
+        <Icon name="linkedin" size={18} /> LinkedIn
+      </Button>
+      <Button href={site.socials.github} variant="ghost" target="_blank" rel="noopener">
+        <Icon name="github" size={18} /> GitHub
+      </Button>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-20);
+    max-width: var(--page-max-width);
+  }
+  .hero__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(44px, 7vw, 72px);
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display-xl);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-5);
+  }
+  .hero__lede { margin: 0 0 var(--space-8); }
+  .hero__title,
+  .hero__lede {
+    max-width: 760px;
+  }
+
+  /* about */
+  .about__content {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-6);
+    max-width: 760px;
+  }
+  .about__avatar {
+    width: 176px;
+    height: 176px;
+    flex: 0 0 176px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+  }
+  .about__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* experience timeline */
+  .timeline { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-8); }
+  .role { display: grid; grid-template-columns: 48px 1fr; gap: var(--space-5); }
+  .role__logo {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .role__logo img { width: 100%; height: 100%; object-fit: cover; }
+  .role__logo-fallback { font-family: var(--font-display); font-weight: 600; color: var(--text-secondary); }
+  .role__head {
+    display: flex;
+    align-items: baseline;
+  }
+  .role__title { font-weight: 600; font-size: 17px; color: var(--text-primary); }
+  .role__dates {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: var(--space-2);
+  }
+  .role__org { font-size: 14px; color: var(--text-secondary); margin-top: 2px; }
+  .role__blurb { font-size: 15px; line-height: 1.6; color: var(--text-secondary); margin: var(--space-2) 0 0; max-width: 640px; }
+
+  /* contact */
+  .contact__lede { margin: 0 0 var(--space-6); }
+  .contact__links { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+  @media (max-width: 720px) {
+    .about__content { gap: var(--space-4); }
+    .about__avatar { width: 128px; height: 128px; flex-basis: 128px; }
+  }
+  @media (max-width: 520px) {
+    .role { grid-template-columns: 40px 1fr; gap: var(--space-4); }
+    .role__logo { width: 40px; height: 40px; }
+  }
+</style>

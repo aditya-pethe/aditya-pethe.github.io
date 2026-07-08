@@ -1,0 +1,8 @@
+/* ============================================================
+   FONT LOADING — Aditya Pethe design system
+   Inter (display/headings + body/UI), JetBrains Mono (code/data).
+   No local font binaries were supplied, so both are loaded from the
+   Google Fonts CDN (exact official families — no substitution needed).
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');

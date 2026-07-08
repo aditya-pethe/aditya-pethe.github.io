@@ -1,0 +1,74 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  class?: string;
+  [key: string]: unknown;
+}
+const { variant = 'primary', size = 'md', href, class: cls, ...rest } = Astro.props;
+const Tag = href ? 'a' : 'button';
+---
+<Tag class:list={['btn', `btn--${variant}`, `btn--${size}`, cls]} href={href} {...rest}>
+  <slot />
+</Tag>
+
+<style>
+  /* Blue is used only as a soft highlight/glow — never a fill. */
+  .btn {
+    --btn-glow: 0 0 0 3px rgba(147, 192, 255, 0.35);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-family: var(--font-body);
+    font-weight: 500;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background var(--duration-fast) var(--ease-standard),
+      border-color var(--duration-fast) var(--ease-standard),
+      color var(--duration-fast) var(--ease-standard),
+      box-shadow var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus-visible { outline: none; box-shadow: var(--btn-glow); }
+
+  .btn--sm { padding: 6px 12px; font-size: 13px; height: 32px; }
+  .btn--md { padding: 9px 16px; font-size: 15px; height: 40px; }
+  .btn--lg { padding: 12px 22px; font-size: 16px; height: 48px; }
+
+  /* primary + secondary: outline that flips to a solid ink fill on hover,
+     with a blue glow ring. Adapts to light/dark via tokens. */
+  .btn--primary {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+  }
+  .btn--primary:hover {
+    background: var(--text-primary);
+    color: var(--surface-0);
+    box-shadow: var(--btn-glow);
+  }
+
+  .btn--secondary {
+    background: var(--surface-1);
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+  }
+  .btn--secondary:hover {
+    background: var(--text-primary);
+    color: var(--surface-0);
+    border-color: var(--text-primary);
+    box-shadow: var(--btn-glow);
+  }
+
+  .btn--ghost { background: transparent; color: var(--text-secondary); }
+  .btn--ghost:hover { color: var(--text-primary); box-shadow: var(--btn-glow); }
+
+  .btn--danger { background: transparent; color: var(--danger-text); border-color: var(--danger-fill); }
+  .btn--danger:hover { background: var(--danger-fill); color: var(--danger-on); }
+</style>

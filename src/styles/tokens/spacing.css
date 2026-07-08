@@ -1,0 +1,47 @@
+/* ============================================================
+   SPACING / RADIUS / SHADOW / MOTION TOKENS
+   ============================================================ */
+
+:root {
+  /* spacing scale — 4px base, used for padding/margins/gaps */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* page rhythm */
+  --content-max-width: 720px;   /* reading column, e.g. blog/case study */
+  --page-max-width: 1120px;     /* wide layout container */
+  --page-gutter: 24px;
+
+  /* radius */
+  --radius-sm: 4px;
+  --radius: 8px;      /* default control radius, matches uploaded theme */
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  /* shadows — soft, low-contrast, ink-tinted (no pure black) */
+  --shadow-sm: 0 1px 2px rgba(11, 15, 18, 0.06);
+  --shadow-md: 0 4px 12px rgba(11, 15, 18, 0.08);
+  --shadow-lg: 0 12px 32px rgba(11, 15, 18, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(147, 192, 255, 0.35);
+
+  /* borders */
+  --border-width: 1px;
+
+  /* motion */
+  --ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-md: 200ms;
+  --duration-slow: 360ms;
+}
