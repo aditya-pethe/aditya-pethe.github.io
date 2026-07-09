@@ -6,7 +6,7 @@ export const site = {
   // Hero
   heroHeadline: "Hi, I'm Aditya",
   heroLede:
-    "I'm an experienced data scientist interested in driving product decisions and evaluating agentic systems. Most recently at Meta on Instagram Reels Monetization, previously at engineering at Amazon Web Services",
+    "I'm an experienced data scientist interested in driving product decisions and evaluating agentic systems. Most recently at Meta on Instagram Reels Monetization, previously engineering at Amazon Web Services",
 
   // About
   about: [
