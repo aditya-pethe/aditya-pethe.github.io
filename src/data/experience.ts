@@ -34,7 +34,7 @@ export const experience: Role[] = [
     org: 'Alexa Prize Challenge',
     title: 'Student Researcher',
     dates: 'May 2021 — Apr 2022',
-    blurb: 'Competing with a team of researchersto build the next generation of conversational taskbots in the Alexa Prize Challenge.',
+    blurb: 'Competing with a team of researchers to build the next generation of conversational taskbots in the Alexa Prize Challenge.',
     brand: 'alexa',
   },
   {
